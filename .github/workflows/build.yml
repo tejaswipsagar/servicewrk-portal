@@ -3,7 +3,7 @@ name: Build on Push
 on:
   push:
     branches:
-      - main
+      - dev
 
 jobs:
   build:
@@ -33,4 +33,4 @@ jobs:
 
       - name: Sync dist folder to S3 PORTAL
         run: |
-          aws s3 sync dist/ s3://webapps.servicewrk.com/PORTAL/ --delete
+          aws s3 sync dist/ s3://webapps.servicewrk.com/DEV/ --delete
