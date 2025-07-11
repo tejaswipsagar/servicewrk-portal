@@ -301,13 +301,14 @@ export const GetCurrentUser = {
             );
             const getCurrent = this.$store.getters.get_current_user_details;
             const activeInactiveTabs = {
-              reports_tab: getCurrent.is_report_tab_visible ?? true,
+              reports_tab: getCurrent.is_report_tab_visible ?? false,
               product_fleet_tab:
-                getCurrent.is_product_fleet_tab_visible ?? true,
-              customer_tab: getCurrent.is_customer_tab_visible ?? true,
+                getCurrent.is_product_fleet_tab_visible ?? false,
+              customer_tab: getCurrent.is_customer_tab_visible ?? false,
               service_co_ordinator_tab:
-                getCurrent.enable_service_co_ordinators_tab ?? true,
-              representative_tab: getCurrent.enable_representatives_tab ?? true,
+                getCurrent.enable_service_co_ordinators_tab ?? false,
+              representative_tab:
+                getCurrent.enable_representatives_tab ?? false,
             };
             this.RouterList = RouterListDealer.filter((item, index) => {
               if (index === 1 && activeInactiveTabs.reports_tab) return true;
@@ -363,14 +364,14 @@ export const GetCurrentUser = {
             // }
             const getCurrent2 = this.$store.getters.get_current_user_details;
             const activeInactiveTabs2 = {
-              reports_tab: getCurrent2.is_report_tab_visible ?? true,
+              reports_tab: getCurrent2.is_report_tab_visible ?? false,
               product_fleet_tab:
-                getCurrent2.is_product_fleet_tab_visible ?? true,
-              customer_tab: getCurrent2.is_customer_tab_visible ?? true,
+                getCurrent2.is_product_fleet_tab_visible ?? false,
+              customer_tab: getCurrent2.is_customer_tab_visible ?? false,
               service_co_ordinator_tab:
-                getCurrent2.enable_service_co_ordinators_tab ?? true,
+                getCurrent2.enable_service_co_ordinators_tab ?? false,
               representative_tab:
-                getCurrent2.enable_representatives_tab ?? true,
+                getCurrent2.enable_representatives_tab ?? false,
             };
             this.RouterList = RouterListDealer.filter((item, index) => {
               if (index === 1 && activeInactiveTabs2.reports_tab) return true;
