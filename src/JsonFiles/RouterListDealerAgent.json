@@ -1,0 +1,70 @@
+[
+  {
+    "MenuName": "Dashboard",
+    "MenuICon": "mdi-view-dashboard",
+    "MenuRoute": "Dashboard",
+    "has_child_routes": false
+  },
+  {
+    "MenuName": "Reports",
+    "MenuICon": "mdi-chart-bar",
+    "MenuRoute": "AttendenceReport",
+    "has_child_routes": true,
+    "SubMenu": [
+      {
+        "MenuName": "Attendance",
+        "MenuICon": "mdi-checkbox-marked-outline",
+        "MenuRoute": "AttendenceReport"
+      },
+      {
+        "MenuName": "Service Type",
+        "MenuICon": "mdi-account-wrench",
+        "MenuRoute": "ServiceTypeReport",
+        "has_child_routes": "SUBMENU"
+      },
+      {
+        "MenuName": "Ticket Aging",
+        "MenuICon": "mdi-chart-ppf",
+        "MenuRoute": "TicketAgingReport",
+        "has_child_routes": "SUBMENU"
+      },
+      {
+        "MenuName": "Download Reports",
+        "MenuICon": "mdi-ticket",
+        "MenuRoute": "TicketReports",
+        "has_child_routes": "SUBMENU"
+      }
+    ]
+  },
+  {
+    "MenuName": "My Tickets",
+    "MenuICon": "mdi-ticket",
+    "MenuRoute": "Tickets",
+    "has_child_routes": false
+  },
+  {
+    "MenuName": "My Product Fleet",
+    "MenuICon": "mdi-pandora",
+    "MenuRoute": "DealerProducts",
+    "has_child_routes": false
+  },
+  {
+    "MenuName": "My Customers",
+    "MenuICon": "mdi-account-group",
+    "MenuRoute": "MyCustomer",
+    "has_child_routes": false
+  },
+
+  {
+    "MenuName": "Service Co-Ordinators",
+    "MenuICon": "mdi-face-agent",
+    "MenuRoute": "DealerAgent",
+    "has_child_routes": false
+  },
+  {
+    "MenuName": "Representatives",
+    "MenuICon": "mdi-account-hard-hat-outline",
+    "MenuRoute": "DealerRepresentative",
+    "has_child_routes": false
+  }
+]

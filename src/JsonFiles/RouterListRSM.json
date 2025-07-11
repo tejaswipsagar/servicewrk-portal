@@ -1,0 +1,195 @@
+[
+  {
+    "MenuName": "Dashboard",
+    "MenuICon": "mdi-view-dashboard",
+    "MenuRoute": "Dashboard",
+    "has_child_routes": false
+  },
+  {
+    "MenuName": "All Search",
+    "MenuICon": "mdi-all-inclusive",
+    "MenuRoute": "AllModules",
+    "has_child_routes": false
+  },
+  {
+    "MenuName": "Reports",
+    "MenuICon": "mdi-chart-bar",
+    "MenuRoute": "AttendenceReport",
+    "has_child_routes": true,
+    "SubMenu": [
+      {
+        "MenuName": "Attendance",
+        "MenuICon": "mdi-checkbox-marked-outline",
+        "MenuRoute": "AttendenceReport"
+      },
+      {
+        "MenuName": "Monthly Ticket",
+        "MenuICon": "mdi-ticket-percent",
+        "MenuRoute": "MonthlyTicketReports"
+      },
+      {
+        "MenuName": "AMC Renewal Due",
+        "MenuICon": "mdi-ribbon",
+        "MenuRoute": "AmcRenewalDue"
+      },
+      {
+        "MenuName": "Download Reports",
+        "MenuICon": "mdi-ticket",
+        "MenuRoute": "TicketReports",
+        "has_child_routes": "SUBMENU"
+      }
+    ]
+  },
+  {
+    "MenuName": "Tickets",
+    "MenuICon": "mdi-ticket",
+    "MenuRoute": "Tickets",
+    "has_child_routes": false
+  },
+  {
+    "MenuName": "Request For Service",
+    "MenuICon": "mdi-email-variant",
+    "MenuRoute": "RequestForServices",
+    "has_child_routes": false
+  },
+  {
+    "MenuName": "Scheduled Service",
+    "MenuICon": "mdi-timer-sand",
+    "MenuRoute": "ScheduleServices",
+    "has_child_routes": false
+  },
+  {
+    "MenuName": "Approvals",
+    "MenuICon": "mdi-check-decagram",
+    "MenuRoute": "Approvals",
+    "has_child_routes": true,
+    "SubMenu": [
+      {
+        "MenuName": "Component",
+        "MenuICon": "mdi-lumx",
+        "MenuRoute": "Approvals"
+      },
+      {
+        "MenuName": "Payout Approvals",
+        "MenuICon": "mdi-check-circle",
+        "MenuRoute": "PayoutApprovals"
+      },
+      {
+        "MenuName": "Product Fleet",
+        "MenuICon": "mdi-pandora",
+        "MenuRoute": "ProductFleetApprovals"
+      },
+      {
+        "MenuName": "Product Fleet Tagging",
+        "MenuICon": "mdi-tag",
+        "MenuRoute": "ProductFleetTaggingApproval"
+      },
+      {
+        "MenuName": "Quotations",
+        "MenuICon": "mdi-check-decagram",
+        "MenuRoute": "QuotationApprovals"
+      },
+      {
+        "MenuName": "Product Replacement",
+        "MenuICon": "mdi-weather-sunset-up",
+        "MenuRoute": "FgrApprovals"
+      }
+    ]
+  },
+  {
+    "MenuName": "Masters",
+    "MenuICon": "mdi-account-tie",
+    "MenuRoute": "ProductCatalogue",
+    "has_child_routes": true,
+    "SubMenu": [
+      {
+        "MenuName": "Products",
+        "MenuICon": "mdi-clipboard-text-multiple",
+        "MenuRoute": "ProductCatalogue",
+        "has_child_routes": true,
+        "SubMenu": [
+          {
+            "MenuName": "Product Catalogue",
+            "MenuICon": "mdi-clipboard-text-multiple",
+            "MenuRoute": "ProductCatalogue"
+          },
+          {
+            "MenuName": "Products Fleet",
+            "MenuICon": "mdi-pandora",
+            "MenuRoute": "ProductFleet"
+          },
+          {
+            "MenuName": "Components",
+            "MenuICon": "mdi-lumx",
+            "MenuRoute": "ComponentsView"
+          }
+        ]
+      },
+      {
+        "MenuName": "Users",
+        "MenuICon": "mdi-account-supervisor-circle",
+        "MenuRoute": "EnterpriseUsers",
+        "has_child_routes": true,
+        "SubMenu": [
+          {
+            "MenuName": "Enterprise",
+            "MenuICon": "mdi-account-multiple-outline",
+            "MenuRoute": "EnterpriseUsers"
+          },
+          {
+            "MenuName": "Enterprise Technicians",
+            "MenuICon": "mdi-account-hard-hat",
+            "MenuRoute": "EnterpriseTechnicians"
+          },
+          {
+            "MenuName": "Dealers",
+            "MenuICon": "mdi-human-greeting",
+            "MenuRoute": "DealersView"
+          },
+          {
+            "MenuName": "Service Partners",
+            "MenuICon": "mdi-ticket-account",
+            "MenuRoute": "ServicePartners"
+          }
+        ]
+      },
+
+      {
+        "MenuName": "Customers",
+        "MenuICon": "mdi-account-group",
+        "MenuRoute": "CustomersView",
+        "has_child_routes": false
+      },
+      {
+        "MenuName": "Vendors",
+        "MenuICon": "mdi-human-queue",
+        "MenuRoute": "VendorsView",
+        "has_child_routes": false
+      }
+    ]
+  },
+  {
+    "MenuName": "Cabinet",
+    "MenuICon": "mdi-briefcase-check",
+    "MenuRoute": "Cabinet",
+    "has_child_routes": false
+  },
+  {
+    "MenuName": "Quotations",
+    "MenuICon": "mdi-cash-100",
+    "MenuRoute": "QuotationsView",
+    "has_child_routes": false
+  },
+  {
+    "MenuName": "Purchase Order",
+    "MenuICon": "mdi-cart",
+    "MenuRoute": "PurchaseOrder",
+    "has_child_routes": false
+  },
+  {
+    "MenuName": "Product Replacement",
+    "MenuICon": "mdi-weather-sunset-up",
+    "MenuRoute": "FgrView",
+    "has_child_routes": false
+  }
+]

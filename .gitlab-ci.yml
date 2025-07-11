@@ -1,0 +1,17 @@
+# stages:
+#   - deploy
+
+# variables:
+#   S3_BUCKET_NAME: "webapps.servicewrk.com"
+#   AWS_DEFAULT_REGION: "ap-southeast-1"
+#   AWS_ACCESS_KEY_ID: "AKIARAJXABES6RGOPDVD"
+#   AWS_SECRET_ACCESS_KEY: "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"
+
+# deploy_s3:
+#   stage: deploy
+#   script:
+#     - aws s3 sync .\dist s3://$S3_BUCKET_NAME/PORTAL --sse AES256 
+
+#   only:
+#     - master
+#   environment: production

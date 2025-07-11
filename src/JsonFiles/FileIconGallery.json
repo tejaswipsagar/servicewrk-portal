@@ -1,0 +1,128 @@
+[
+  {
+    "extension": "mp3",
+    "icon": "mdi-play-box-outline",
+    "color": "green"
+  },
+  {
+    "extension": "mp4",
+    "icon": "mdi-play-box-outline",
+    "color": "green"
+  },
+  {
+    "extension": "mov",
+    "icon": "mdi-play-box-outline",
+    "color": "green"
+  },
+  {
+    "extension": "ppt",
+    "icon": "mdi-file-powerpoint-box",
+    "color": "#BF360C"
+  },
+  {
+    "extension": "pptx",
+    "icon": "mdi-file-powerpoint-box",
+    "color": "#BF360C"
+  },
+  {
+    "extension": "pdf",
+    "icon": "mdi-file-pdf-box",
+    "color": "#D50000"
+  },
+  {
+    "extension": "docx",
+    "icon": "mdi-file-word-box",
+    "color": "#283593"
+  },
+  {
+    "extension": "js",
+    "icon": "mdi-language-javascript",
+    "color": "#CCCC00"
+  },
+  {
+    "extension": "zip",
+    "icon": "mdi-zip-box",
+    "color": "primary"
+  },
+  {
+    "extension": "xlsx",
+    "icon": "mdi-file-excel-box",
+    "color": "#2E7D32"
+  },
+  {
+    "extension": "xls",
+    "icon": "mdi-file-excel-box",
+    "color": "#2E7D32"
+  },
+  {
+    "extension": "csv",
+    "icon": "mdi-file-excel-box",
+    "color": "#2E7D32"
+  },
+  {
+    "extension": "ods",
+    "icon": "mdi-file-excel-box",
+    "color": "#2E7D32"
+  },
+  {
+    "extension": "txt",
+    "icon": "mdi-calendar-text",
+    "color": "#03A9F4"
+  },
+  {
+    "extension": "json",
+    "icon": "mdi-calendar-text",
+    "color": "#03A9F4"
+  },
+  {
+    "extension": "rtf",
+    "icon": "mdi-calendar-text",
+    "color": "#03A9F4"
+  },
+  {
+    "extension": "png",
+    "icon": "mdi-file-image",
+    "color": "#03A9F4"
+  },
+  {
+    "extension": "PNG",
+    "icon": "mdi-file-image",
+    "color": "#03A9F4"
+  },
+  {
+    "extension": "jpeg",
+    "icon": "mdi-file-image",
+    "color": "#03A9F4"
+  },
+  {
+    "extension": "jpg",
+    "icon": "mdi-file-image"
+  },
+  {
+    "extension": "gif",
+    "icon": "mdi-file-image",
+    "color": "#03A9F4"
+  },
+  {
+    "extension": "giff",
+    "icon": "mdi-file-image"
+  },
+  {
+    "extension": "bmp",
+    "icon": "mdi-file-image"
+  },
+  {
+    "extension": "tif",
+    "icon": "mdi-file-image",
+    "color": "#03A9F4"
+  },
+  {
+    "extension": "tiff",
+    "icon": "mdi-file-image"
+  },
+  {
+    "extension": "ico",
+    "icon": "mdi-file-image",
+    "color": "#03A9F4"
+  }
+]

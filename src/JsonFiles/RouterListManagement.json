@@ -1,0 +1,302 @@
+[
+  {
+    "MenuName": "Dashboard",
+    "MenuICon": "mdi-view-dashboard",
+    "MenuRoute": "Dashboard",
+    "has_child_routes": false
+  },
+  {
+    "MenuName": "Reports",
+    "MenuICon": "mdi-chart-bar",
+    "MenuRoute": "AttendenceReport",
+    "has_child_routes": true,
+    "SubMenu": [
+      {
+        "MenuName": "Attendance",
+        "MenuICon": "mdi-checkbox-marked-outline",
+        "MenuRoute": "AttendenceReport"
+      },
+      {
+        "MenuName": "User Daily",
+        "MenuICon": "mdi-calendar-today",
+        "MenuRoute": "MonthlyUserReport"
+      },
+      {
+        "MenuName": "Monthly Ticket",
+        "MenuICon": "mdi-ticket-percent",
+        "MenuRoute": "MonthlyTicketReports"
+      },
+      {
+        "MenuName": "AMC Renewal Due",
+        "MenuICon": "mdi-ribbon",
+        "MenuRoute": "AmcRenewalDue"
+      },
+      {
+        "MenuName": "Service Type",
+        "MenuICon": "mdi-account-wrench",
+        "MenuRoute": "ServiceTypeReport",
+        "has_child_routes": "SUBMENU"
+      },
+      {
+        "MenuName": "Ticket Aging",
+        "MenuICon": "mdi-chart-ppf",
+        "MenuRoute": "TicketAgingReport",
+        "has_child_routes": "SUBMENU"
+      },
+      {
+        "MenuName": "Technician Productivity",
+        "MenuICon": "mdi-progress-upload",
+        "MenuRoute": "ProductivityReport",
+        "has_child_routes": "SUBMENU"
+      },
+      {
+        "MenuName": "Customer Products",
+        "MenuICon": "mdi-database-arrow-right",
+        "MenuRoute": "CustomerProducts",
+        "has_child_routes": "SUBMENU"
+      },
+      {
+        "MenuName": "Download Reports",
+        "MenuICon": "mdi-ticket",
+        "MenuRoute": "TicketReports",
+        "has_child_routes": "SUBMENU"
+      }
+    ]
+  },
+  {
+    "MenuName": "All Search",
+    "MenuICon": "mdi-all-inclusive",
+    "MenuRoute": "AllModules",
+    "has_child_routes": false
+  },
+  {
+    "MenuName": "Tickets",
+    "MenuICon": "mdi-ticket",
+    "has_child_routes": true,
+    "MenuRoute": "ActiveTickets",
+    "SubMenu": [
+      {
+        "MenuName": "Active",
+        "MenuICon": "mdi-ticket-account",
+        "MenuRoute": "ActiveTickets",
+        "has_child_routes": "SUBMENU"
+      },
+      {
+        "MenuName": "Partially Closed",
+        "MenuICon": "mdi-ticket-confirmation-outline",
+        "MenuRoute": "PartiallyClosedTickets",
+        "has_child_routes": "SUBMENU"
+      },
+      {
+        "MenuName": "Closed",
+        "MenuICon": "mdi-ticket-confirmation",
+        "MenuRoute": "ClosedTickets",
+        "has_child_routes": "SUBMENU"
+      },
+      {
+        "MenuName": "Inactive",
+        "MenuICon": "mdi-close-octagon-outline",
+        "MenuRoute": "InactiveTickets",
+        "has_child_routes": "SUBMENU"
+      }
+    ]
+  },
+  {
+    "MenuName": "Request For Service",
+    "MenuICon": "mdi-email-variant",
+    "MenuRoute": "RequestForServices",
+    "has_child_routes": false
+  },
+  {
+    "MenuName": "Scheduled Service",
+    "MenuICon": "mdi-calendar-clock",
+    "MenuRoute": "ScheduleServices",
+    "has_child_routes": false
+  },
+  {
+    "MenuName": "Approvals",
+    "MenuICon": "mdi-check-decagram",
+    "MenuRoute": "Approvals",
+    "has_child_routes": true,
+    "SubMenu": [
+      {
+        "MenuName": "Component",
+        "MenuICon": "mdi-lumx",
+        "MenuRoute": "Approvals"
+      },
+      {
+        "MenuName": "Product Fleet",
+        "MenuICon": "mdi-pandora",
+        "MenuRoute": "ProductFleetApprovals"
+      },
+      {
+        "MenuName": "Product Fleet Tagging",
+        "MenuICon": "mdi-tag",
+        "MenuRoute": "ProductFleetTaggingApproval"
+      }
+    ]
+  },
+  {
+    "MenuName": "Users",
+    "MenuICon": "mdi-account-supervisor-circle",
+    "MenuRoute": "EnterpriseUsers",
+    "has_child_routes": true,
+    "SubMenu": [
+      {
+        "MenuName": "Enterprise",
+        "MenuICon": "mdi-account-multiple-outline",
+        "MenuRoute": "EnterpriseUsers"
+      },
+      {
+        "MenuName": "Enterprise Technicians",
+        "MenuICon": "mdi-account-hard-hat",
+        "MenuRoute": "EnterpriseTechnicians"
+      },
+      {
+        "MenuName": "Dealers",
+        "MenuICon": "mdi-human-greeting",
+        "MenuRoute": "DealersView"
+      },
+      {
+        "MenuName": "Service Partners",
+        "MenuICon": "mdi-ticket-account",
+        "MenuRoute": "ServicePartners"
+      }
+    ]
+  },
+  {
+    "MenuName": "Products",
+    "MenuICon": "mdi-clipboard-text-multiple",
+    "MenuRoute": "ProductCatalogue",
+    "has_child_routes": true,
+    "SubMenu": [
+      {
+        "MenuName": "Product Catalogue",
+        "MenuICon": "mdi-clipboard-text-multiple",
+        "MenuRoute": "ProductCatalogue"
+      },
+      {
+        "MenuName": "Product Fleet",
+        "MenuICon": "mdi-pandora",
+        "MenuRoute": "ProductFleet"
+      },
+      {
+        "MenuName": "Components",
+        "MenuICon": "mdi-lumx",
+        "MenuRoute": "ComponentsView"
+      },
+      {
+        "MenuName": "Component Transaction History",
+        "MenuICon": "mdi-backup-restore",
+        "MenuRoute": "ComponentsTransactionHistory"
+      }
+    ]
+  },
+  {
+    "MenuName": "Territories",
+    "MenuICon": "mdi-map-marker-distance",
+    "MenuRoute": "TerritoriesView",
+    "has_child_routes": false
+  },
+  {
+    "MenuName": "Inventory",
+    "MenuICon": "mdi-open-in-new",
+    "MenuRoute": "InventoryView",
+    "has_child_routes": true,
+    "SubMenu": [
+      {
+        "MenuName": "Component Inventory",
+        "MenuICon": "mdi-vector-square",
+        "MenuRoute": "InventoryView"
+      },
+      {
+        "MenuName": "Transfer Product Fleet",
+        "MenuICon": "mdi-share",
+        "MenuRoute": "ProductFleetInventory"
+      }
+    ]
+  },
+  {
+    "MenuName": "Store/Service Center",
+    "MenuICon": "mdi-store-check-outline",
+    "MenuRoute": "ServiceCenter",
+    "has_child_routes": false
+  },
+  {
+    "MenuName": "Customers",
+    "MenuICon": "mdi-account-group",
+    "MenuRoute": "CustomersView",
+    "has_child_routes": false
+  },
+  {
+    "MenuName": "Settings",
+    "MenuICon": "mdi-wrench",
+    "MenuRoute": "DesignationsView",
+    "has_child_routes": true,
+    "SubMenu": [
+      {
+        "MenuName": "Designations",
+        "MenuICon": "mdi-briefcase",
+        "MenuRoute": "DesignationsView"
+      },
+      {
+        "MenuName": "Support Types",
+        "MenuICon": "mdi-ribbon",
+        "MenuRoute": "SupportTypes"
+      },
+      {
+        "MenuName": "Service Types",
+        "MenuICon": "mdi-form-select",
+        "MenuRoute": "ServiceTypes"
+      },
+      {
+        "MenuName": "WIP State",
+        "MenuICon": "mdi-step-forward",
+        "MenuRoute": "WipState"
+      },
+
+      {
+        "MenuName": "Problem Description",
+        "MenuICon": "mdi-find-replace",
+        "MenuRoute": "ProblemDescription"
+      },
+      {
+        "MenuName": "Closure Remarks",
+        "MenuICon": "mdi-bookmark-remove",
+        "MenuRoute": "ClosureRemarks"
+      },
+      {
+        "MenuName": "Product Fleet Status",
+        "MenuICon": "mdi-list-status",
+        "MenuRoute": "ProductFleetStatus"
+      },
+      {
+        "MenuName": "Customer Category",
+        "MenuICon": "mdi-copyright",
+        "MenuRoute": "CustomerCategory"
+      },
+      {
+        "MenuName": "Workflow Setting",
+        "MenuICon": "mdi-chemical-weapon",
+        "MenuRoute": "WorkflowSettings"
+      },
+      {
+        "MenuName": "Organization Settings",
+        "MenuICon": "mdi-cog",
+        "MenuRoute": "OrganizationSettings"
+      }
+    ]
+  },
+  {
+    "MenuName": "Cabinet",
+    "MenuICon": "mdi-briefcase-check",
+    "MenuRoute": "Cabinet",
+    "has_child_routes": false
+  },
+  {
+    "MenuName": "Leads",
+    "MenuICon": "mdi-form-select",
+    "MenuRoute": "ProductSales",
+    "has_child_routes": false
+  }
+]

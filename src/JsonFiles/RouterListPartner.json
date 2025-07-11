@@ -1,0 +1,57 @@
+[
+  {
+    "MenuName": "Dashboard",
+    "MenuICon": "mdi-view-dashboard",
+    "MenuRoute": "Dashboard",
+    "has_child_routes": false
+  },
+  {
+    "MenuName": "Reports",
+    "MenuICon": "mdi-chart-bar",
+    "MenuRoute": "AttendenceReport",
+    "has_child_routes": true,
+    "SubMenu": [
+      {
+        "MenuName": "Attendance",
+        "MenuICon": "mdi-checkbox-marked-outline",
+        "MenuRoute": "AttendenceReport"
+      },
+      {
+        "MenuName": "Download Reports",
+        "MenuICon": "mdi-ticket",
+        "MenuRoute": "TicketReports",
+        "has_child_routes": "SUBMENU"
+      }
+    ]
+  },
+  {
+    "MenuName": "Tickets",
+    "MenuICon": "mdi-ticket",
+    "MenuRoute": "Tickets",
+    "has_child_routes": false
+  },
+  {
+    "MenuName": "Customers",
+    "MenuICon": "mdi-account-group",
+    "MenuRoute": "PartnersCustomerView",
+    "has_child_routes": false
+  },
+  {
+    "MenuName": "Service Co-Ordinators",
+    "MenuICon": "mdi-face-agent",
+    "MenuRoute": "PartnerServiceCoOrdinators",
+    "has_child_routes": false
+  },
+  {
+    "MenuName": "Service Partner Payout",
+    "MenuICon": "mdi-credit-card",
+    "MenuRoute": "ServicePartnerPayout",
+    "has_child_routes": false
+  },
+  {
+    "MenuName": "Representatives",
+    "MenuICon": "mdi-account-hard-hat-outline",
+    "MenuRoute": "PartnerRepresentatives",
+    "has_child_routes": false
+  }
+]
