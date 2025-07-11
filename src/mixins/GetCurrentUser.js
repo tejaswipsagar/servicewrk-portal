@@ -373,6 +373,7 @@ export const GetCurrentUser = {
               representative_tab:
                 getCurrent2.enable_representatives_tab ?? false,
             };
+
             this.RouterList = RouterListDealer.filter((item, index) => {
               if (index === 1 && activeInactiveTabs2.reports_tab) return true;
               if (index === 3 && activeInactiveTabs2.product_fleet_tab)
