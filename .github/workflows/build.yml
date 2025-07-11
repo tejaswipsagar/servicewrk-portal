@@ -34,7 +34,3 @@ jobs:
       - name: Sync dist folder to S3 PORTAL
         run: |
           aws s3 sync dist/ s3://webapps.servicewrk.com/PORTAL/ --delete
-
-      # - name: Upload ReleaseNotes.txt to S3 PORTAL
-      #   run: |
-      #     aws s3 cp ReleaseNotes.txt s3://webapps.servicewrk.com/PORTAL/ReleaseNotes.txt
