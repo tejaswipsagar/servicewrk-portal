@@ -167,6 +167,7 @@ export default {
   },
 
   async mounted() {
+    this.overlay = true;
     this.maxMonth = `${new Date().getFullYear()}-${(new Date().getMonth() + 1)
       .toString()
       .padStart(2, "0")}`;
@@ -209,6 +210,8 @@ export default {
         this.alignPartnerReportsMethod();
       } catch (error) {
         //
+      } finally {
+        this.overlay = false;
       }
     },
 
