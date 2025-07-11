@@ -20,6 +20,7 @@ export const getServicePartnerCustomerData = {
         return response;
       } catch (error) {
         //
+        //
       }
     },
   },
