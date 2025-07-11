@@ -81,6 +81,7 @@ export default {
                 organization_id:
                   this.$store.getters.get_current_user_details.organization_id,
                 serial_number: this.serialNumber,
+                user_id: this.$store.getters.get_current_user_details.user_id,
               },
             })
           );
