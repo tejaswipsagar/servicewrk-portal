@@ -344,6 +344,7 @@ export default {
   },
   methods: {
     async callApiMethod() {
+      this.overlay = true;
       const timeout = 60 * 1000;
       const interval = 1000;
       const startTime = Date.now();
@@ -369,6 +370,7 @@ export default {
         });
         return;
       }
+      this.overlay = false;
       const allCustomers = obj.customer_data;
       if (
         this.customer_type === "INDIVIDUAL" ||
