@@ -3,7 +3,11 @@ name: Build on Push
 on:
   push:
     branches:
+<<<<<<< HEAD
       - main
+=======
+      - dev2
+>>>>>>> dev
 
 jobs:
   build:
