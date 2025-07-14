@@ -1000,7 +1000,6 @@ export default {
                 ? this.StoreObj.initiator_user_id
                 : undefined,
             action: act == "APPROVE" ? "APPROVE" : "REJECT",
-
             workflow_items: this.selected.map((val) => {
               if (
                 val.local_purchase_approve_count != undefined &&
@@ -1020,7 +1019,6 @@ export default {
                   )
                     ? undefined
                     : val.vendor_details[0].vendor_component_code,
-
                   vendor_component_serial_number: [
                     "",
                     null,

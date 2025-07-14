@@ -317,10 +317,14 @@ export default {
       const indexedDbDataObj = await getOrgS3DataMethod();
       const orgDetails = this.$store.getters.get_current_user_details;
       const currentOrgId = orgDetails.organization_id;
+      const customerVersionId = orgDetails.organization_details.version_id;
+      console.log("VERSION_ID", orgDetails.organization_details.version_id);
       if (
         !indexedDbDataObj ||
         Object.keys(indexedDbDataObj).length === 0 ||
-        indexedDbDataObj.current_org_id !== currentOrgId
+        indexedDbDataObj.current_org_id !== currentOrgId ||
+        indexedDbDataObj.customer_data?.customer_version_id !==
+          customerVersionId
       ) {
         await fetchAndStoreOrgS3DataMethod(orgDetails);
       } else {
