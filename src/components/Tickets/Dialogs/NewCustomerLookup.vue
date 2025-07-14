@@ -165,7 +165,7 @@ import Snackbar from "@/components/Extras/SnackbarView.vue";
 // import { GetAllCustomersList } from "@/mixins/Customers/GetAllCustomers.js";
 // import { GetAllCustomerBySearch } from "@/mixins/Terretories/GetCustomerListBySearch.js";
 import { GetAllOrganizationSettingsTypesInMS } from "@/mixins/MastersSetting/GetAllOrganizationSettingsTypesInMS.js";
-import { getAllCustomerUsingS3URL } from "@/mixins/Customers/GetAllS3Customers.js";
+// import { getAllCustomerUsingS3URL } from "@/mixins/Customers/GetAllS3Customers.js";
 import { GetCustomerDetails } from "@/graphql/queries.js";
 import { API, graphqlOperation } from "aws-amplify";
 import { getOrgS3DataMethod } from "@/IndexedDB/IndexedDBGetter.js";
@@ -178,7 +178,7 @@ export default {
     // GetAllCustomersList,
     // GetAllCustomerBySearch,
     GetAllOrganizationSettingsTypesInMS,
-    getAllCustomerUsingS3URL,
+    // getAllCustomerUsingS3URL,
   ],
   components: {
     Overlay,
