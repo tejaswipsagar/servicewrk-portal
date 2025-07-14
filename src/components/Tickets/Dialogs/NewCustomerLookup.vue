@@ -342,8 +342,31 @@ export default {
   },
   methods: {
     async callApiMethod() {
-      // const allCustomers = await this.getAllCustomerUsingS3URLMethod();
-      const obj = await getOrgS3DataMethod();
+      const timeout = 60 * 1000;
+      const interval = 1000;
+      const startTime = Date.now();
+      let obj = null;
+      while (!obj && Date.now() - startTime < timeout) {
+        obj = await getOrgS3DataMethod();
+        if (!obj) {
+          await new Promise((resolve) => setTimeout(resolve, interval));
+        }
+      }
+      if (!obj) {
+        console.error("⏳ Timed out waiting for org_s3_data.");
+        this.renderComp = false;
+        this.$nextTick(() => {
+          this.SnackBarComponent = {
+            SnackbarVmodel: true,
+            SnackbarColor: "red",
+            Top: true,
+            SnackbarText:
+              "Failed to get customers data, try refreshing the page..!",
+          };
+          this.renderComp = true;
+        });
+        return;
+      }
       const allCustomers = obj.customer_data;
       if (
         this.customer_type === "INDIVIDUAL" ||
@@ -354,7 +377,6 @@ export default {
         );
       }
     },
-
     async checkItem(item) {
       console.log("CUST_DET", item);
       item.Is_enabled_checkBox = false;
