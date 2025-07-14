@@ -12,7 +12,10 @@ export async function fetchAndStoreOrgS3DataMethod(orgDetails) {
     const customerData = await customerListRes.json();
     const combinedData = {
       // product_fleet_data: productFleetData,
-      customer_data: customerData,
+      customer_data: {
+        customer_data_list: customerData,
+        customer_version_id: orgDetails.organization_details.version_id,
+      },
       current_org_id: orgDetails.organization_id,
     };
     await set("org_s3_data", combinedData);

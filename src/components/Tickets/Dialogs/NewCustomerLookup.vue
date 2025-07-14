@@ -364,14 +364,14 @@ export default {
             SnackbarColor: "red",
             Top: true,
             SnackbarText:
-              "Failed to get customers data, try refreshing the page..!",
+              "Failed to get customers data, try after refreshing the page..!",
           };
           this.renderComp = true;
         });
         return;
       }
       this.overlay = false;
-      const allCustomers = obj.customer_data;
+      const allCustomers = obj.customer_data.customer_data_list;
       if (
         this.customer_type === "INDIVIDUAL" ||
         this.customer_type === "BUSINESS"

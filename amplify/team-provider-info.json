@@ -114,5 +114,18 @@
       "StackId": "arn:aws:cloudformation:ap-south-1:069371693349:stack/amplify-serviceworkportal-swrknowtwo-4a30a/eef40aa0-4ff8-11f0-adab-0646a8c92919",
       "AmplifyAppId": "d2sukdhkmb5w3"
     }
+  },
+  "svrk": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-serviceworkportal-svrk-90423-authRole",
+      "UnauthRoleArn": "arn:aws:iam::069371693349:role/amplify-serviceworkportal-svrk-90423-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::069371693349:role/amplify-serviceworkportal-svrk-90423-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-serviceworkportal-svrk-90423-deployment",
+      "UnauthRoleName": "amplify-serviceworkportal-svrk-90423-unauthRole",
+      "StackName": "amplify-serviceworkportal-svrk-90423",
+      "StackId": "arn:aws:cloudformation:ap-south-1:069371693349:stack/amplify-serviceworkportal-svrk-90423/d19f2a10-6098-11f0-a509-06eb427117e1",
+      "AmplifyAppId": "d2sukdhkmb5w3"
+    }
   }
 }
