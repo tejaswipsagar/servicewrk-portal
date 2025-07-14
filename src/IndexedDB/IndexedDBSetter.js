@@ -7,11 +7,11 @@ export async function fetchAndStoreOrgS3DataMethod(orgDetails) {
     const productFleetUrl = `${orgDetails.organization_details.productfleet_s3_url}?cb=${timestamp}`;
     const customerListUrl = `${orgDetails.organization_details.customer_list_s3_url}?cb=${timestamp}`;
     const productFleetRes = await fetch(productFleetUrl);
-    const productFleetData = await productFleetRes.json();
+    // const productFleetData = await productFleetRes.json();
     const customerListRes = await fetch(customerListUrl);
     const customerData = await customerListRes.json();
     const combinedData = {
-      product_fleet_data: productFleetData,
+      // product_fleet_data: productFleetData,
       customer_data: customerData,
       current_org_id: orgDetails.organization_id,
     };

@@ -7,7 +7,7 @@
         <v-toolbar dark dense class="elevation-0" color="primary">
           <div>
             <v-icon small class="mr-2">{{ "mdi-magnify" }}</v-icon
-            >Customer Lookup
+            >Customer Lookup22
           </div>
           <v-spacer></v-spacer>
           <v-btn icon @click="dialogLookUpCustomerEmit((Toggle = 1))"
@@ -168,6 +168,7 @@ import { GetAllOrganizationSettingsTypesInMS } from "@/mixins/MastersSetting/Get
 import { getAllCustomerUsingS3URL } from "@/mixins/Customers/GetAllS3Customers.js";
 import { GetCustomerDetails } from "@/graphql/queries.js";
 import { API, graphqlOperation } from "aws-amplify";
+import { getOrgS3DataMethod } from "@/IndexedDB/IndexedDBGetter.js";
 export default {
   props: {
     Customer: String,
@@ -280,8 +281,8 @@ export default {
     },
     async dialogLookUpCustomer(val) {
       if (val) {
-        // this.customer_type = "INDIVIDUAL";
-        this.customerData = await this.getAllCustomerUsingS3URLMethod();
+        // this.customerData = await this.getAllCustomerUsingS3URLMethod();
+
         await this.callApiMethod();
       }
     },
@@ -341,7 +342,9 @@ export default {
   },
   methods: {
     async callApiMethod() {
-      const allCustomers = await this.getAllCustomerUsingS3URLMethod();
+      // const allCustomers = await this.getAllCustomerUsingS3URLMethod();
+      const obj = await getOrgS3DataMethod();
+      const allCustomers = obj.customer_data;
       if (
         this.customer_type === "INDIVIDUAL" ||
         this.customer_type === "BUSINESS"
