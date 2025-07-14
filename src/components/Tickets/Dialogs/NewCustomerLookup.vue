@@ -7,7 +7,7 @@
         <v-toolbar dark dense class="elevation-0" color="primary">
           <div>
             <v-icon small class="mr-2">{{ "mdi-magnify" }}</v-icon
-            >Customer Lookup22
+            >Customer Lookup(v2)
           </div>
           <v-spacer></v-spacer>
           <v-btn icon @click="dialogLookUpCustomerEmit((Toggle = 1))"
@@ -235,7 +235,7 @@ export default {
       },
       {
         text: "Customer Phone Number",
-        value: "customer_primary_phone_number",
+        value: "customer_primary_contact_number",
       },
       {
         text: "Customer ID",
@@ -260,17 +260,18 @@ export default {
     //   }
     // },
     SearchBy(val) {
-      const formattedVal = this.search.toLowerCase().trim();
-      const key = val;
-      if (!key) return;
-      this.filteredCustomerData = this.customerData.filter((cust) =>
-        String(cust[key] || "")
-          .toLowerCase()
-          .includes(formattedVal)
-      );
+      this.search = "";
+      // const formattedVal = this.search.toLowerCase().trim();
+      // const key = val;
+      // if (!key) return;
+      // this.filteredCustomerData = this.customerData.filter((cust) =>
+      //   String(cust[key] || "")
+      //     .toLowerCase()
+      //     .includes(formattedVal)
+      // );
     },
     search(val) {
-      const formattedVal = val.toLowerCase().trim();
+      const formattedVal = String(val).toLowerCase().trim();
       const key = this.SearchBy;
       if (!key) return;
       this.filteredCustomerData = this.customerData.filter((cust) =>
@@ -279,6 +280,7 @@ export default {
           .includes(formattedVal)
       );
     },
+
     async dialogLookUpCustomer(val) {
       if (val) {
         // this.customerData = await this.getAllCustomerUsingS3URLMethod();
@@ -301,14 +303,14 @@ export default {
       }
     },
     async customer_type(val) {
+      this.search = "";
       console.log("CUST_TYPE888", val);
-
       const baseItems = [
         { text: "All", value: "all" },
         { text: "Contact Person", value: "customer_name" },
         {
           text: "Customer Phone Number",
-          value: "customer_primary_phone_number",
+          value: "customer_primary_contact_number",
         },
         { text: "Customer ID", value: "customer_unique_id" },
       ];
