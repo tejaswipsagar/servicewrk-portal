@@ -321,6 +321,7 @@ export const GetCurrentUser = {
                 return true;
               return ![1, 3, 4, 5, 6].includes(index); // keep other routes untouched
             });
+            //TEJUUUU
             // console.log("ROUTERS", RouterListDealer);
             // const getCurrent = this.$store.getters.get_current_user_details;
             // const activeInactiveTabs = {
