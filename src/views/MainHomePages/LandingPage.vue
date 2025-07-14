@@ -312,17 +312,21 @@ export default {
     //   console.warn("StorageManager API not supported in this browser.");
     // }
 
-    //Uncomment After this
-    // const indexedDbDataObj = await getOrgS3DataMethod();
-    // const orgDetails = this.$store.getters.get_current_user_details;
-    // const currentOrgId = orgDetails.organization_id;
-    // if (
-    //   !indexedDbDataObj ||
-    //   Object.keys(indexedDbDataObj).length === 0 ||
-    //   indexedDbDataObj.current_org_id !== currentOrgId
-    // ) {
-    //   await fetchAndStoreOrgS3DataMethod(orgDetails);
-    // }
+    // Uncomment After this
+    setTimeout(async () => {
+      const indexedDbDataObj = await getOrgS3DataMethod();
+      const orgDetails = this.$store.getters.get_current_user_details;
+      const currentOrgId = orgDetails.organization_id;
+      if (
+        !indexedDbDataObj ||
+        Object.keys(indexedDbDataObj).length === 0 ||
+        indexedDbDataObj.current_org_id !== currentOrgId
+      ) {
+        await fetchAndStoreOrgS3DataMethod(orgDetails);
+      } else {
+        console.log("HERE_ELSE");
+      }
+    }, 2000);
   },
   methods: {
     toggleSubMenu(parentMenuName, subMenuName) {

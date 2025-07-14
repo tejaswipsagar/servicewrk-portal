@@ -7,7 +7,7 @@
         <v-toolbar dark dense class="elevation-0" color="primary">
           <div>
             <v-icon small class="mr-2">{{ "mdi-magnify" }}</v-icon
-            >Customer Lookup
+            >Customer Lookup(v2)
           </div>
           <v-spacer></v-spacer>
           <v-btn icon @click="dialogLookUpCustomerEmit((Toggle = 1))"
@@ -165,9 +165,10 @@ import Snackbar from "@/components/Extras/SnackbarView.vue";
 // import { GetAllCustomersList } from "@/mixins/Customers/GetAllCustomers.js";
 // import { GetAllCustomerBySearch } from "@/mixins/Terretories/GetCustomerListBySearch.js";
 import { GetAllOrganizationSettingsTypesInMS } from "@/mixins/MastersSetting/GetAllOrganizationSettingsTypesInMS.js";
-import { getAllCustomerUsingS3URL } from "@/mixins/Customers/GetAllS3Customers.js";
+// import { getAllCustomerUsingS3URL } from "@/mixins/Customers/GetAllS3Customers.js";
 import { GetCustomerDetails } from "@/graphql/queries.js";
 import { API, graphqlOperation } from "aws-amplify";
+import { getOrgS3DataMethod } from "@/IndexedDB/IndexedDBGetter.js";
 export default {
   props: {
     Customer: String,
@@ -177,7 +178,7 @@ export default {
     // GetAllCustomersList,
     // GetAllCustomerBySearch,
     GetAllOrganizationSettingsTypesInMS,
-    getAllCustomerUsingS3URL,
+    // getAllCustomerUsingS3URL,
   ],
   components: {
     Overlay,
@@ -234,7 +235,7 @@ export default {
       },
       {
         text: "Customer Phone Number",
-        value: "customer_primary_phone_number",
+        value: "customer_primary_contact_number",
       },
       {
         text: "Customer ID",
@@ -259,17 +260,18 @@ export default {
     //   }
     // },
     SearchBy(val) {
-      const formattedVal = this.search.toLowerCase().trim();
-      const key = val;
-      if (!key) return;
-      this.filteredCustomerData = this.customerData.filter((cust) =>
-        String(cust[key] || "")
-          .toLowerCase()
-          .includes(formattedVal)
-      );
+      this.search = "";
+      // const formattedVal = this.search.toLowerCase().trim();
+      // const key = val;
+      // if (!key) return;
+      // this.filteredCustomerData = this.customerData.filter((cust) =>
+      //   String(cust[key] || "")
+      //     .toLowerCase()
+      //     .includes(formattedVal)
+      // );
     },
     search(val) {
-      const formattedVal = val.toLowerCase().trim();
+      const formattedVal = String(val).toLowerCase().trim();
       const key = this.SearchBy;
       if (!key) return;
       this.filteredCustomerData = this.customerData.filter((cust) =>
@@ -278,10 +280,11 @@ export default {
           .includes(formattedVal)
       );
     },
+
     async dialogLookUpCustomer(val) {
       if (val) {
-        // this.customer_type = "INDIVIDUAL";
-        this.customerData = await this.getAllCustomerUsingS3URLMethod();
+        // this.customerData = await this.getAllCustomerUsingS3URLMethod();
+
         await this.callApiMethod();
       }
     },
@@ -300,14 +303,14 @@ export default {
       }
     },
     async customer_type(val) {
+      this.search = "";
       console.log("CUST_TYPE888", val);
-
       const baseItems = [
         { text: "All", value: "all" },
         { text: "Contact Person", value: "customer_name" },
         {
           text: "Customer Phone Number",
-          value: "customer_primary_phone_number",
+          value: "customer_primary_contact_number",
         },
         { text: "Customer ID", value: "customer_unique_id" },
       ];
@@ -341,7 +344,32 @@ export default {
   },
   methods: {
     async callApiMethod() {
-      const allCustomers = await this.getAllCustomerUsingS3URLMethod();
+      const timeout = 60 * 1000;
+      const interval = 1000;
+      const startTime = Date.now();
+      let obj = null;
+      while (!obj && Date.now() - startTime < timeout) {
+        obj = await getOrgS3DataMethod();
+        if (!obj) {
+          await new Promise((resolve) => setTimeout(resolve, interval));
+        }
+      }
+      if (!obj) {
+        console.error("⏳ Timed out waiting for org_s3_data.");
+        this.renderComp = false;
+        this.$nextTick(() => {
+          this.SnackBarComponent = {
+            SnackbarVmodel: true,
+            SnackbarColor: "red",
+            Top: true,
+            SnackbarText:
+              "Failed to get customers data, try refreshing the page..!",
+          };
+          this.renderComp = true;
+        });
+        return;
+      }
+      const allCustomers = obj.customer_data;
       if (
         this.customer_type === "INDIVIDUAL" ||
         this.customer_type === "BUSINESS"
@@ -351,7 +379,6 @@ export default {
         );
       }
     },
-
     async checkItem(item) {
       console.log("CUST_DET", item);
       item.Is_enabled_checkBox = false;
