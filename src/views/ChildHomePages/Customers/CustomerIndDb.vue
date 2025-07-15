@@ -1110,6 +1110,7 @@ export default {
         this.overlay = false;
       }
     },
+
     checkItem(item, action) {
       this.StoreObj = item;
       this.StoreObj.action = action;
@@ -1122,6 +1123,7 @@ export default {
       } else if (action == "UPDATE_INVALID_CUSTOMER")
         [(this.current_view = "CREATE")];
     },
+
     async CreateCustomerCardEmit(Toggle, Status) {
       this.current_view = "LIST";
       this.overlay = true;
