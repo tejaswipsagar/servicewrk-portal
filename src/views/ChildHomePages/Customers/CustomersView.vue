@@ -556,6 +556,7 @@ import { GetAllOrganizationSettingsTypesInMS } from "@/mixins/MastersSetting/Get
 import { getAllCustomerUsingS3URL } from "@/mixins/Customers/GetAllS3Customers.js";
 import { GetCurrentUser } from "@/mixins/GetCurrentUser.js";
 import { setTimeout } from "core-js";
+import { fetchAndStoreOrgS3DataMethod } from "@/IndexedDB/IndexedDBSetter.js";
 export default {
   mixins: [
     GenerateS3URL,
@@ -1160,6 +1161,7 @@ export default {
         [(this.current_view = "CREATE")];
     },
     async CreateCustomerCardEmit(Toggle, Status) {
+      console.log("CUSTOMER_CARD_EMITING_HERE");
       this.current_view = "LIST";
       this.overlay = true;
       if (Toggle == 2) {
@@ -1173,6 +1175,9 @@ export default {
           };
           this.snackbarRenderComp = true;
         });
+        await fetchAndStoreOrgS3DataMethod(
+          this.$store.getters.get_current_user_details
+        );
       }
       setTimeout(async () => {
         this.customerData = [];

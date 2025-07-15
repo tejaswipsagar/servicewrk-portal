@@ -557,6 +557,7 @@ import { getAllCustomerUsingS3URL } from "@/mixins/Customers/GetAllS3Customers.j
 import { GetCurrentUser } from "@/mixins/GetCurrentUser.js";
 import { setTimeout } from "core-js";
 import { getOrgS3DataMethod } from "@/IndexedDB/IndexedDBGetter.js";
+import { fetchAndStoreOrgS3DataMethod } from "@/IndexedDB/IndexedDBSetter.js";
 export default {
   mixins: [
     GenerateS3URL,
@@ -794,6 +795,7 @@ export default {
     },
 
     async customer_type(val) {
+      console.log("COMMING_TO_CUSTOMER_TYPE");
       const allCustomers = await this.getIndexedDbDataMethod();
       if (val === "INDIVIDUAL" || val === "BUSINESS") {
         this.customerData = allCustomers.filter(
@@ -829,15 +831,21 @@ export default {
       const maxRetries = 60; // 60 retries × 1000ms = 60 seconds
       let retries = 0;
       while (
-        (!indexedDbDataObj || !indexedDbDataObj.customer_data) &&
+        (!indexedDbDataObj ||
+          !indexedDbDataObj.customer_data?.customer_data_list) &&
         retries < maxRetries
       ) {
         await new Promise((resolve) => setTimeout(resolve, 1000));
         indexedDbDataObj = await getOrgS3DataMethod();
         retries++;
       }
-      if (indexedDbDataObj && indexedDbDataObj.customer_data) {
-        return this.callPromiseWithDelayMethod(indexedDbDataObj.customer_data);
+      if (
+        indexedDbDataObj &&
+        indexedDbDataObj.customer_data?.customer_data_list
+      ) {
+        return this.callPromiseWithDelayMethod(
+          indexedDbDataObj.customer_data?.customer_data_list
+        );
       } else {
         this.overlay = false;
         return [];
@@ -1058,15 +1066,19 @@ export default {
         this.isSearching = false;
       }
     },
-    EmitTab() {
+    async EmitTab() {
       this.overlay = true;
       this.page = 1;
       this.current_view = "LIST";
-      this.GetAllCustomersData = [];
-
-      setTimeout(async () => {
-        this.customerData = await this.getAllCustomerUsingS3URLMethod();
-      }, 5000);
+      await fetchAndStoreOrgS3DataMethod(
+        this.$store.getters.get_current_user_details
+      );
+      this.customerData = [];
+      await this.GetAllOrganizationSettingsTypesMethod();
+      this.customer_type = "";
+      this.customer_type = await this.GetAllOrganizationSettingsTypesObject
+        .default_customer_type;
+      this.overlay = false;
     },
     handleRowClick(item) {
       this.StoreObj = item;
@@ -1085,12 +1097,17 @@ export default {
       this.dialogActivateInactivateCustomer = false;
       if (Toggle == 2) {
         this.overlay = true;
-
         this.GetAllCustomersData = [];
         this.GetAllSearchCustomerList = [];
-        setTimeout(async () => {
-          this.customerData = await this.getAllCustomerUsingS3URLMethod();
-        }, 5000);
+        await fetchAndStoreOrgS3DataMethod(
+          this.$store.getters.get_current_user_details
+        );
+        this.customerData = [];
+        await this.GetAllOrganizationSettingsTypesMethod();
+        this.customer_type = "";
+        this.customer_type = await this.GetAllOrganizationSettingsTypesObject
+          .default_customer_type;
+        this.overlay = false;
       }
     },
     checkItem(item, action) {
@@ -1119,15 +1136,23 @@ export default {
           };
           this.snackbarRenderComp = true;
         });
-      }
-      setTimeout(async () => {
+        await fetchAndStoreOrgS3DataMethod(
+          this.$store.getters.get_current_user_details
+        );
         this.customerData = [];
-        this.customerData = await this.getAllCustomerUsingS3URLMethod();
         await this.GetAllOrganizationSettingsTypesMethod();
+        this.customer_type = "";
         this.customer_type = await this.GetAllOrganizationSettingsTypesObject
           .default_customer_type;
-        this.GetAllCustomersData = [];
-      }, 5000);
+        this.overlay = false;
+      }
+      // setTimeout(async () => {
+      //   this.customerData = [];
+      //   await this.GetAllOrganizationSettingsTypesMethod();
+      //   this.customer_type = await this.GetAllOrganizationSettingsTypesObject
+      //     .default_customer_type;
+      //   this.GetAllCustomersData = [];
+      // }, 5000);
     },
   },
 };
