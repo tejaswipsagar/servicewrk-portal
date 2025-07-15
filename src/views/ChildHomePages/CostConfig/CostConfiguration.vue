@@ -182,6 +182,7 @@ export default {
   methods: {
     async callApi() {
       try {
+        this.overlay = true;
         const result = await API.graphql(
           graphqlOperation(ListCostConfiguration, {
             input: {
@@ -199,6 +200,8 @@ export default {
         console.log("RESP", response);
       } catch (error) {
         //
+      } finally {
+        this.overlay = false;
       }
     },
 

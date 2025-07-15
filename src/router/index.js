@@ -504,54 +504,54 @@ const routes = [
         component: () =>
           import("@/views/ChildHomePages/DealerRFS/DealerRFS.vue"),
       },
-      // {
-      //   name: "Tickets",
-      //   path: "/Tickets",
-      //   component: () =>
-      //     import("@/views/ChildHomePages/NewTicketsTab/TicketView.vue"),
-      //   children: [
-      //     {
-      //       name: "ActiveTickets",
-      //       path: "/ActiveTickets",
-      //       component: () =>
-      //         import("@/views/ChildHomePages/Tickets/ActiveTickets.vue"),
-      //     },
-      //     {
-      //       name: "PartiallyClosedTickets",
-      //       path: "/PartiallyClosedTickets",
-      //       component: () =>
-      //         import(
-      //           "@/views/ChildHomePages/Tickets/PartiallyClosedTickets.vue"
-      //         ),
-      //     },
-      //     {
-      //       name: "ClosedTickets",
-      //       path: "/ClosedTickets",
-      //       component: () =>
-      //         import("@/views/ChildHomePages/Tickets/ClosedTickets.vue"),
-      //     },
-      //     {
-      //       name: "InactiveTickets",
-      //       path: "/InactiveTickets",
-      //       component: () =>
-      //         import("@/views/ChildHomePages/Tickets/InactiveTickets.vue"),
-      //     },
-      //     {
-      //       name: "CostConfiguration",
-      //       path: "/CostConfiguration",
-      //       component: () =>
-      //         import("@/views/ChildHomePages/CostConfig/CostConfiguration.vue"),
-      //     },
-      //     {
-      //       name: "ServicePartnerPayout",
-      //       path: "/ServicePartnerPayout",
-      //       component: () =>
-      //         import(
-      //           "@/views/ChildHomePages/ServicePartnerPayout/ServicePartnerMT.vue"
-      //         ),
-      //     },
-      //   ],
-      // },
+      {
+        name: "Tickets",
+        path: "/Tickets",
+        component: () =>
+          import("@/views/ChildHomePages/NewTicketsTab/TicketView.vue"),
+        children: [
+          {
+            name: "ActiveTickets",
+            path: "/ActiveTickets",
+            component: () =>
+              import("@/views/ChildHomePages/Tickets/ActiveTickets.vue"),
+          },
+          {
+            name: "PartiallyClosedTickets",
+            path: "/PartiallyClosedTickets",
+            component: () =>
+              import(
+                "@/views/ChildHomePages/Tickets/PartiallyClosedTickets.vue"
+              ),
+          },
+          {
+            name: "ClosedTickets",
+            path: "/ClosedTickets",
+            component: () =>
+              import("@/views/ChildHomePages/Tickets/ClosedTickets.vue"),
+          },
+          {
+            name: "InactiveTickets",
+            path: "/InactiveTickets",
+            component: () =>
+              import("@/views/ChildHomePages/Tickets/InactiveTickets.vue"),
+          },
+        ],
+      },
+      {
+        name: "CostConfiguration",
+        path: "/CostConfiguration",
+        component: () =>
+          import("@/views/ChildHomePages/CostConfig/CostConfiguration.vue"),
+      },
+      {
+        name: "ServicePartnerPayout",
+        path: "/ServicePartnerPayout",
+        component: () =>
+          import(
+            "@/views/ChildHomePages/ServicePartnerPayout/ServicePartnerMT.vue"
+          ),
+      },
       {
         name: "PartnersClosedTicketReports",
         path: "/PartnersClosedTicketReports",
@@ -560,34 +560,34 @@ const routes = [
             "@/views/ChildHomePages/Analytics/PartnersClosedTicketReports.vue"
           ),
       },
-      {
-        name: "Tickets",
-        path: "/Tickets",
-        component: () =>
-          import("@/views/ChildHomePages/NewTicketsTab/NewTicketView.vue"),
-        children: [
-          {
-            name: "ActiveTickets",
-            path: "/ActiveTickets",
-            component: () =>
-              import("@/views/ChildHomePages/Tickets/NewActiveTickets.vue"),
-          },
-          {
-            name: "ClosedTickets",
-            path: "/ClosedTickets",
-            component: () =>
-              import("@/views/ChildHomePages/Tickets/NewClosedTickets.vue"),
-          },
-          {
-            name: "PartiallyClosedTickets",
-            path: "/PartiallyClosedTickets",
-            component: () =>
-              import(
-                "@/views/ChildHomePages/Tickets/NewPartiallyClosedTickets.vue"
-              ),
-          },
-        ],
-      },
+      // {
+      //   name: "Tickets",
+      //   path: "/Tickets",
+      //   component: () =>
+      //     import("@/views/ChildHomePages/NewTicketsTab/NewTicketView.vue"),
+      //   children: [
+      //     {
+      //       name: "ActiveTickets",
+      //       path: "/ActiveTickets",
+      //       component: () =>
+      //         import("@/views/ChildHomePages/Tickets/NewActiveTickets.vue"),
+      //     },
+      //     {
+      //       name: "ClosedTickets",
+      //       path: "/ClosedTickets",
+      //       component: () =>
+      //         import("@/views/ChildHomePages/Tickets/NewClosedTickets.vue"),
+      //     },
+      //     {
+      //       name: "PartiallyClosedTickets",
+      //       path: "/PartiallyClosedTickets",
+      //       component: () =>
+      //         import(
+      //           "@/views/ChildHomePages/Tickets/NewPartiallyClosedTickets.vue"
+      //         ),
+      //     },
+      //   ],
+      // },
     ],
   },
 ];
