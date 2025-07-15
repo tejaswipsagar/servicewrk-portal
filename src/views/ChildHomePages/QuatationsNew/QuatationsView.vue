@@ -637,6 +637,9 @@ export default {
   },
   watch: {
     async quotation_status(val) {
+      this.loadedPages = [];
+      this.page = 1;
+      this.pageCount = 1;
       if (val === "ALL") {
         this.headers = [
           {

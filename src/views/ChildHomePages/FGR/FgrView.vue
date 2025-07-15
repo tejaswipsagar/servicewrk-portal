@@ -82,7 +82,7 @@
         <v-btn small color="primary" class="ml-2" @click="fgrGenerateMethod()"
           >Generate<v-icon small class="pl-1">mdi-plus</v-icon></v-btn
         >
-        <!-- <v-tooltip color="primary" bottom>
+        <v-tooltip color="primary" bottom>
           <template v-slot:activator="{ on, attrs }">
             <v-btn
               small
@@ -97,7 +97,7 @@
             </v-btn>
           </template>
           <span class="white--text">Download Product Replacement Excel</span>
-        </v-tooltip> -->
+        </v-tooltip>
       </v-toolbar>
       <v-card-text class="pt-2">
         <v-data-table
