@@ -290,6 +290,7 @@ export default {
     }
   },
   async mounted() {
+    console.log("COMING_TO_LANDING_PAGE");
     // await this.GetCurrentUser();
     this.Router;
     this.updateNavigationValueMethod();

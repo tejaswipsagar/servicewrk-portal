@@ -254,7 +254,7 @@ const routes = [
         path: "/CustomersView",
         props: true,
         component: () =>
-          import("@/views/ChildHomePages/Customers/CustomersView.vue"),
+          import("@/views/ChildHomePages/Customers/CustomerIndDb.vue"),
       },
       {
         name: "ServicePartnerCustomersView",
@@ -536,21 +536,21 @@ const routes = [
             component: () =>
               import("@/views/ChildHomePages/Tickets/InactiveTickets.vue"),
           },
-          {
-            name: "CostConfiguration",
-            path: "/CostConfiguration",
-            component: () =>
-              import("@/views/ChildHomePages/CostConfig/CostConfiguration.vue"),
-          },
-          {
-            name: "ServicePartnerPayout",
-            path: "/ServicePartnerPayout",
-            component: () =>
-              import(
-                "@/views/ChildHomePages/ServicePartnerPayout/ServicePartnerMT.vue"
-              ),
-          },
         ],
+      },
+      {
+        name: "CostConfiguration",
+        path: "/CostConfiguration",
+        component: () =>
+          import("@/views/ChildHomePages/CostConfig/CostConfiguration.vue"),
+      },
+      {
+        name: "ServicePartnerPayout",
+        path: "/ServicePartnerPayout",
+        component: () =>
+          import(
+            "@/views/ChildHomePages/ServicePartnerPayout/ServicePartnerMT.vue"
+          ),
       },
       {
         name: "PartnersClosedTicketReports",
