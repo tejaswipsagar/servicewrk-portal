@@ -636,6 +636,7 @@ export default {
     };
   },
   watch: {
+    //
     async quotation_status(val) {
       this.loadedPages = [];
       this.page = 1;
