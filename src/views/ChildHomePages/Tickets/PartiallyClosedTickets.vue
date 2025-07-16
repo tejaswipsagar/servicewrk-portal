@@ -402,7 +402,7 @@ export default {
     pageCount: 1,
     TableHeight: 0,
     search: "",
-    noDataText: "",
+    noDataText: "No data found..!",
     current_view: "LIST",
     SearchBy: "ticket_id",
     partially_closed_by: "ALL",

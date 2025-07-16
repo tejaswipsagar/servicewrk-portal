@@ -1685,7 +1685,11 @@ export default {
   },
   async mounted() {
     const s3Tickets = await this.getAllTicketUsingS3URLMethod();
-
+    console.log(
+      "TICKET_S",
+      this.$store.getters.get_current_user_details.organization_details
+        .tickets_s3_url
+    );
     setTimeout(() => {
       this.GetAllDashboardDataMethod();
     }, 500);
