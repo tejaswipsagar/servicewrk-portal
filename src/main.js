@@ -9,9 +9,7 @@ import * as VueGoogleMaps from "vue2-google-maps";
 import "material-design-icons-iconfont/dist/material-design-icons.css";
 Vue.use(VueGoogleMaps, {
   load: {
-    // key: "AIzaSyBUp8E7OghfEFg9fJ1ePokoOhE1I8MaD-M",
-    // key: "AIzaSyDQQR39Enfvo8foNpxMlcRglg03_wxmOv0",
-    key: "AIzaSyAuHcsssNtWZhnt0op_n5nm9s8raGeNHGk",
+    key: "",
     libraries: "places",
   },
 });
